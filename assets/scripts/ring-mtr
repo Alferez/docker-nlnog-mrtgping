@@ -1,0 +1,16 @@
+#!/bin/bash
+if [ -z $2 ]
+then
+	echo "ERROR: please use $0 IP NODE [real]"
+	exit 1
+fi
+
+CHECK=$1
+NODE=$2
+
+if [ "$3" == "real" ]
+then
+	ssh ${NODE}.ring.nlnog.net mtr -n -r ${CHECK}
+else
+	ssh ${NODE}.ring.nlnog.net mtr -r ${CHECK}
+fi

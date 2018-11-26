@@ -1,0 +1,4 @@
+#!/bin/bash
+
+curl -s https://api.ring.nlnog.net/1.0/nodes | grep hostname | sed 's/"hostname": "//g' | sed 's/.ring.nlnog.net",//g'|sed 's/        //g'
+

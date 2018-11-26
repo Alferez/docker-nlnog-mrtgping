@@ -1,0 +1,5 @@
+Host *.ring.nlnog.net
+   User NLNOGUSER
+   IdentityFile /config/ring.nlnog.net
+   IdentitiesOnly yes
+   StrictHostKeyChecking no

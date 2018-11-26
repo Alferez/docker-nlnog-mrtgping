@@ -1,0 +1,16 @@
+#!/bin/bash
+if [ -z $2 ]
+then
+	echo "ERROR: please use $0 IP NODE"
+	exit 1
+fi
+
+CHECK=$1
+NODE=$2
+
+RESULT=$(ssh ${NODE}.ring.nlnog.net ping -c5 ${CHECK}|grep 'min/avg/max'| sed 's/ms//g'|awk '{print $NF}')
+RESMIN=$(echo $RESULT|awk -F'/' '{print $1}')
+RESAVR=$(echo $RESULT|awk -F'/' '{print $2}')
+RESMAX=$(echo $RESULT|awk -F'/' '{print $3}')
+echo "${NODE};${RESMAX};${RESMIN};${RESAVR}"
+

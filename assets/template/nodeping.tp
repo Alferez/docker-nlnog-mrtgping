@@ -1,0 +1,18 @@
+
+Title[NODE]: Ping from NODE
+MaxBytes[NODE]: 5000
+AbsMax[NODE]: 10000
+Options[NODE]: gauge
+Target[NODE]: `/scripts/mrtg-ping IP NODE`
+PageTop[NODE]: <H1>Ping from NODE</H1>
+	<P>Actually we are measuring the ping time between NLNog NODE node and your network IP.
+YLegend[NODE]: Round Trip Time
+ShortLegend[NODE]: ms
+Legend1[NODE]: Maximum Round Trip Time in Milli Second
+Legend2[NODE]: Minimum Round Trip Time in Milli Second
+Legend3[NODE]: Maximal 5 Minute Maximum Round Trip Time
+Legend4[NODE]: Maximal 5 Minute Minimum Round Trip Time
+LegendI[NODE]: &nbsp;Max:
+LegendO[NODE]: &nbsp;Min:
+WithPeak[NODE]: ymwd
+

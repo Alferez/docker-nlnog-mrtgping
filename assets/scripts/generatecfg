@@ -1,0 +1,9 @@
+#!/bin/bash
+cat /template/head.tp >/etc/mrtg.cfg
+DESTIP=$(cat /config/destination | head -n1)
+
+for NODE in $(cat /config/nodes)
+do
+	cat /template/nodeping.tp | sed "s/NODE/$NODE/g" | sed "s/IP/$DESTIP/g" >>/etc/mrtg.cfg
+done
+
